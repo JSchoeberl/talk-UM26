@@ -12,5 +12,10 @@ parts:
     chapters:
       - file: notebooks/Lazy.ipynb      
       - file: notebooks/Hybridization.ipynb
+      - file: notebooks/SchaeferTurek.ipynb
+      - file: notebooks/Limits.ipynb      
+      - file: notebooks/Contact.ipynb      
+      - file: notebooks/Learning.ipynb                    
       - url: https://jschoeberl.github.io/iFEM/plates_shells/HCT.html
         title: HCT-element
+      - file: notebooks/JKMelasticity.ipynb
