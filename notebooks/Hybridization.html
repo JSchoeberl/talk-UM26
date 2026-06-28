@@ -1,0 +1,595 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>3. Hybridization &#8212; UM26 talk</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"ba98028459e749c2b1a1ef6a268bc7c5": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "51346a24552344a6b07bdc6140a2970a": {"model_name": "AnyModel", "model_module": "anywidget", "model_module_version": "~0.11.*", "state": {"_anywidget_id": "netgen.webgui.WebGuiWidget", "_css": "\n    .webgui-widget {\n        padding: 0px 2px;\n    }\n    .webgui_container { position: relative; }\n    .webgui_container .image { width: 100%; display: block; }\n    .webgui_overlay {\n        position: absolute; top: 0; left: 0; width: 100%; height: 100%;\n        cursor: pointer;\n    }\n    .webgui_tooltip .webgui_tooltiptext {\n        visibility: hidden;\n        background-color: rgba(85, 85, 85, 0.9); color: #fff;\n        text-align: center; border-radius: 6px; padding: 5px 10px;\n        position: absolute; top: 50%; left: 50%;\n        transform: translate(-50%, -50%); white-space: nowrap;\n    }\n    .webgui_tooltip:hover .webgui_tooltiptext { visibility: visible; }\n\n    .label3d {\n      -moz-user-select: none;\n      -ms-user-select:none;\n      -o-user-select:none;\n      -webkit-user-select: none;\n      display:block;\n      position: absolute;\n      transform: translate(-50%, -50%);\n      user-select:none;\n      z-index: 1;\n    }\n\n    .tooltiptext {\n      width: 120px;\n      background-color: #555;\n      color: #fff;\n      text-align: center;\n      border-radius: 6px;\n      padding: 5px 0;\n      position: absolute;\n      z-index: 1;\n      left: 50%;\n      margin-left: -60px;\n      opacity: 1;\n      transition: opacity 0.3s;\n    }\n\n\n    ", "_dom_classes": [], "_esm": "\n    function loadWebgui() {\n        // webgui's dist is a Vite IIFE build that assigns a global `webgui`\n        // var; it has no module exports, so it must be loaded as a classic\n        // <script> and read off of window rather than import()-ed.\n        if (window.webgui) return Promise.resolve(window.webgui);\n        if (!window._webgui_loading) {\n            window._webgui_loading = new Promise((resolve, reject) => {\n                const s = document.createElement(\"script\");\n                s.src = \"https://cdn.jsdelivr.net/npm/webgui@0.2.39/dist/webgui.js\";\n                s.onload = () => resolve(window.webgui);\n                s.onerror = reject;\n                document.head.appendChild(s);\n            });\n        }\n        return window._webgui_loading;\n    }\n\n    // dat.gui (the control panel webgui adds, top-right) injects its stylesheet\n    // into the main document <head>. When this widget is hosted by MyST it lives\n    // inside a shadow root, and head styles do not cross the shadow boundary, so\n    // the panel renders unstyled. Copy the dat.gui stylesheet into our shadow\n    // root so it applies. No-op in a normal Jupyter page (no shadow root).\n    function adoptDatGuiStyles(el) {\n        const root = el.getRootNode();\n        if (typeof ShadowRoot === 'undefined' || !(root instanceof ShadowRoot)) return;\n        if (root.querySelector('style[data-webgui-datgui]')) return;\n        let copied = false;\n        for (const style of document.querySelectorAll('head style')) {\n            const css = style.textContent || '';\n            if (/\\.dg[\\s.,{>:]/.test(css)) {\n                const clone = document.createElement('style');\n                clone.setAttribute('data-webgui-datgui', '');\n                clone.textContent = css;\n                root.appendChild(clone);\n                copied = true;\n            }\n        }\n        return copied;\n    }\n\n    // The render data is normally the `value` trait itself. When `value` is a\n    // string it is instead a URL to a JSON file holding the data: the static\n    // MyST build offloads the (large) render data to a sidecar file next to the\n    // notebook to keep pages small (see scripts/widgets_to_directives.py). Fetch\n    // it in that case; otherwise use the value as-is.\n    function resolveRenderData(value) {\n        if (typeof value === 'string') {\n            return fetch(value).then((resp) => resp.json());\n        }\n        return Promise.resolve(value);\n    }\n\n    // Interactive scene view (port of WebguiView in the legacy widget.ts).\n    function renderScene(webgui, model, el) {\n        el.classList.add('webgui-widget');\n        // size the widget as requested from Python; the canvas container fills it\n\n        const scene = new webgui.Scene();\n        const container = document.createElement('div');\n        container.style.width = model.get(\"width\");\n        container.style.height = model.get(\"height\");\n        el.appendChild(container);\n\n        // defer to the next tick so the container is laid out before webgui\n        // measures it (otherwise offsetHeight is read as ~0 -> tiny canvas)\n        setTimeout(() => {\n            resolveRenderData(model.get(\"value\")).then((render_data) => {\n                container.style.width = model.get(\"width\");\n                container.style.height = model.get(\"height\");\n                if(Object.keys(render_data).length === 0)\n                    return;\n                scene.init(container, render_data);\n                scene.container.style.position = 'relative';\n                scene.render();\n                adoptDatGuiStyles(el);\n                // dat.gui may inject its <style> a tick after construction; retry once.\n                setTimeout(() => adoptDatGuiStyles(el), 100);\n            });\n        }, 0);\n\n        // redraw: Python sets widget.value -> push new data into the scene\n        model.on('change:value', () => {\n            resolveRenderData(model.get(\"value\")).then((render_data) => {\n                scene.updateRenderData(render_data);\n            });\n        });\n    }\n\n    // Documentation view (port of WebguiDocuView): show a preview image and\n    // only load the interactive scene + render data on click.\n    function renderDocu(webgui, model, el) {\n        const files = model.get(\"value\");\n        const container = document.createElement('div');\n        container.className = 'webgui_container';\n        container.style.width = '100%';\n        container.innerHTML = `\n            <img src=\"${files['preview']}\" class=\"image\">\n            <div class=\"webgui_overlay webgui_tooltip\">\n                <span class=\"webgui_tooltiptext\"> Click to load interactive WebGUI </span>\n            </div>`;\n        const div = document.createElement('div');\n        div.appendChild(container);\n        el.appendChild(div);\n\n        container.addEventListener('click', () => {\n            document.body.style.cursor = 'wait';\n            fetch(files['render_data'])\n                .then((resp) => resp.json())\n                .then((render_data) => {\n                    document.body.style.cursor = '';\n                    const style = `width: ${el.clientWidth}px; height: ${el.clientHeight}px;`;\n                    container.remove();\n                    const pel = el.children[0];\n                    pel.innerHTML = '';\n                    pel.setAttribute('style', style);\n                    const scene = new webgui.Scene();\n                    scene.init(pel, render_data);\n                    scene.render();\n                    adoptDatGuiStyles(el);\n                    setTimeout(() => adoptDatGuiStyles(el), 100);\n                });\n        });\n    }\n\n    async function render({ model, el }) {\n        const webgui = await loadWebgui();\n        const value = model.get(\"value\");\n        if (value && value.render_data !== undefined && value.preview !== undefined) {\n            renderDocu(webgui, model, el);\n        } else {\n            renderScene(webgui, model, el);\n        }\n    }\n    export default { render };\n    ", "_model_module": "anywidget", "_model_module_version": "~0.11.*", "_model_name": "AnyModel", "_view_count": null, "_view_module": "anywidget", "_view_module_version": "~0.11.*", "_view_name": "AnyView", "height": "20rem", "layout": "IPY_MODEL_ba98028459e749c2b1a1ef6a268bc7c5", "tabbable": null, "tooltip": null, "value": {"gui_settings": {}, "ngsolve_version": "6.2.2605-32-g6274337fa", "mesh_dim": 2, "order2d": 2, "order3d": 2, "draw_vol": false, "draw_surf": true, "objects": [], "deformation": false, "funcdim": 1, "show_wireframe": true, "show_mesh": true, "Bezier_points": ["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"], "edges": ["zcxMPgAAAAAAAAAAAAAAAM3MzD4AAAAAAAAAAAAAAACamRk/AAAAAAAAAAAAAAAAzcxMPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/zcxMPgAAAAAAAAAAAACAP83MzD4AAAAAAAAAAAAAgD+amRk/AAAAAAAAAAAAAIA/zcxMPwAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAM3MTD8AAIA/AAAAAAAAAACamRk/AACAPwAAAAAAAAAAzczMPgAAgD8AAAAAAAAAAM3MTD4AAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAPG4ppM3MTD8AAAAAAAAAADxuqaSamRk/AAAAAAAAAABZJf6kzczMPgAAAAAAAAAAPG4ppc3MTD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=", "zczMPQAAAAAAAAAAAAAAAJqZmT4AAAAAAAAAAAAAAAAAAAA/AAAAAAAAAAAAAAAAMzMzPwAAAAAAAAAAAAAAAGZmZj8AAAAAAAAAAAAAAAAAAIA/zczMPQAAAAAAAAAAAACAP5qZmT4AAAAAAAAAAAAAgD8AAAA/AAAAAAAAAAAAAIA/MzMzPwAAAAAAAAAAAACAP2ZmZj8AAAAAAAAAAGZmZj8AAIA/AAAAAAAAAAAzMzM/AACAPwAAAAAAAAAAAAAAPwAAgD8AAAAAAAAAAJqZmT4AAIA/AAAAAAAAAADNzMw9AACAPwAAAAAAAAAAPG6po2ZmZj8AAAAAAAAAAFklfqQzMzM/AAAAAAAAAADKydOkAAAAPwAAAAAAAAAAdEAUpZqZmT4AAAAAAAAAADxuqaTNzMw9AAAAAAAAAAA=", "AAAAAAAAAAAAAAAAAAAAAM3MTD4AAAAAAAAAAAAAAADNzMw+AAAAAAAAAAAAAAAAmpkZPwAAAAAAAAAAAAAAAM3MTD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAP83MTD4AAAAAAAAAAAAAgD/NzMw+AAAAAAAAAAAAAIA/mpkZPwAAAAAAAAAAAACAP83MTD8AAAAAAAAAAAAAgD8AAIA/AAAAAAAAAADNzEw/AACAPwAAAAAAAAAAmpkZPwAAgD8AAAAAAAAAAM3MzD4AAIA/AAAAAAAAAADNzEw+AACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAADxuKaTNzEw/AAAAAAAAAAA8bqmkmpkZPwAAAAAAAAAAWSX+pM3MzD4AAAAAAAAAADxuKaXNzEw+AAAAAAAAAAA="], "Bezier_trig_points": ["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"], "mesh_center": [0.49999999999999994, 0.5000000000000001, 1.1125369292536007e-308], "mesh_radius": 0.7071067811865477, "funcmin": -0.03860204218126788, "funcmax": 2.2250738585072014e-308, "multidim_interpolate": false, "multidim_animate": false, "deformation_scale": 1.0, "autoscale": true, "fullscreen": false}, "width": "100%"}}, "539393f84a904f17acf8c74d392ba832": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "4434c513af294d8ead86d10ea916afff": {"model_name": "AnyModel", "model_module": "anywidget", "model_module_version": "~0.11.*", "state": {"_anywidget_id": "netgen.webgui.WebGuiWidget", "_css": "\n    .webgui-widget {\n        padding: 0px 2px;\n    }\n    .webgui_container { position: relative; }\n    .webgui_container .image { width: 100%; display: block; }\n    .webgui_overlay {\n        position: absolute; top: 0; left: 0; width: 100%; height: 100%;\n        cursor: pointer;\n    }\n    .webgui_tooltip .webgui_tooltiptext {\n        visibility: hidden;\n        background-color: rgba(85, 85, 85, 0.9); color: #fff;\n        text-align: center; border-radius: 6px; padding: 5px 10px;\n        position: absolute; top: 50%; left: 50%;\n        transform: translate(-50%, -50%); white-space: nowrap;\n    }\n    .webgui_tooltip:hover .webgui_tooltiptext { visibility: visible; }\n\n    .label3d {\n      -moz-user-select: none;\n      -ms-user-select:none;\n      -o-user-select:none;\n      -webkit-user-select: none;\n      display:block;\n      position: absolute;\n      transform: translate(-50%, -50%);\n      user-select:none;\n      z-index: 1;\n    }\n\n    .tooltiptext {\n      width: 120px;\n      background-color: #555;\n      color: #fff;\n      text-align: center;\n      border-radius: 6px;\n      padding: 5px 0;\n      position: absolute;\n      z-index: 1;\n      left: 50%;\n      margin-left: -60px;\n      opacity: 1;\n      transition: opacity 0.3s;\n    }\n\n\n    ", "_dom_classes": [], "_esm": "\n    function loadWebgui() {\n        // webgui's dist is a Vite IIFE build that assigns a global `webgui`\n        // var; it has no module exports, so it must be loaded as a classic\n        // <script> and read off of window rather than import()-ed.\n        if (window.webgui) return Promise.resolve(window.webgui);\n        if (!window._webgui_loading) {\n            window._webgui_loading = new Promise((resolve, reject) => {\n                const s = document.createElement(\"script\");\n                s.src = \"https://cdn.jsdelivr.net/npm/webgui@0.2.39/dist/webgui.js\";\n                s.onload = () => resolve(window.webgui);\n                s.onerror = reject;\n                document.head.appendChild(s);\n            });\n        }\n        return window._webgui_loading;\n    }\n\n    // dat.gui (the control panel webgui adds, top-right) injects its stylesheet\n    // into the main document <head>. When this widget is hosted by MyST it lives\n    // inside a shadow root, and head styles do not cross the shadow boundary, so\n    // the panel renders unstyled. Copy the dat.gui stylesheet into our shadow\n    // root so it applies. No-op in a normal Jupyter page (no shadow root).\n    function adoptDatGuiStyles(el) {\n        const root = el.getRootNode();\n        if (typeof ShadowRoot === 'undefined' || !(root instanceof ShadowRoot)) return;\n        if (root.querySelector('style[data-webgui-datgui]')) return;\n        let copied = false;\n        for (const style of document.querySelectorAll('head style')) {\n            const css = style.textContent || '';\n            if (/\\.dg[\\s.,{>:]/.test(css)) {\n                const clone = document.createElement('style');\n                clone.setAttribute('data-webgui-datgui', '');\n                clone.textContent = css;\n                root.appendChild(clone);\n                copied = true;\n            }\n        }\n        return copied;\n    }\n\n    // The render data is normally the `value` trait itself. When `value` is a\n    // string it is instead a URL to a JSON file holding the data: the static\n    // MyST build offloads the (large) render data to a sidecar file next to the\n    // notebook to keep pages small (see scripts/widgets_to_directives.py). Fetch\n    // it in that case; otherwise use the value as-is.\n    function resolveRenderData(value) {\n        if (typeof value === 'string') {\n            return fetch(value).then((resp) => resp.json());\n        }\n        return Promise.resolve(value);\n    }\n\n    // Interactive scene view (port of WebguiView in the legacy widget.ts).\n    function renderScene(webgui, model, el) {\n        el.classList.add('webgui-widget');\n        // size the widget as requested from Python; the canvas container fills it\n\n        const scene = new webgui.Scene();\n        const container = document.createElement('div');\n        container.style.width = model.get(\"width\");\n        container.style.height = model.get(\"height\");\n        el.appendChild(container);\n\n        // defer to the next tick so the container is laid out before webgui\n        // measures it (otherwise offsetHeight is read as ~0 -> tiny canvas)\n        setTimeout(() => {\n            resolveRenderData(model.get(\"value\")).then((render_data) => {\n                container.style.width = model.get(\"width\");\n                container.style.height = model.get(\"height\");\n                if(Object.keys(render_data).length === 0)\n                    return;\n                scene.init(container, render_data);\n                scene.container.style.position = 'relative';\n                scene.render();\n                adoptDatGuiStyles(el);\n                // dat.gui may inject its <style> a tick after construction; retry once.\n                setTimeout(() => adoptDatGuiStyles(el), 100);\n            });\n        }, 0);\n\n        // redraw: Python sets widget.value -> push new data into the scene\n        model.on('change:value', () => {\n            resolveRenderData(model.get(\"value\")).then((render_data) => {\n                scene.updateRenderData(render_data);\n            });\n        });\n    }\n\n    // Documentation view (port of WebguiDocuView): show a preview image and\n    // only load the interactive scene + render data on click.\n    function renderDocu(webgui, model, el) {\n        const files = model.get(\"value\");\n        const container = document.createElement('div');\n        container.className = 'webgui_container';\n        container.style.width = '100%';\n        container.innerHTML = `\n            <img src=\"${files['preview']}\" class=\"image\">\n            <div class=\"webgui_overlay webgui_tooltip\">\n                <span class=\"webgui_tooltiptext\"> Click to load interactive WebGUI </span>\n            </div>`;\n        const div = document.createElement('div');\n        div.appendChild(container);\n        el.appendChild(div);\n\n        container.addEventListener('click', () => {\n            document.body.style.cursor = 'wait';\n            fetch(files['render_data'])\n                .then((resp) => resp.json())\n                .then((render_data) => {\n                    document.body.style.cursor = '';\n                    const style = `width: ${el.clientWidth}px; height: ${el.clientHeight}px;`;\n                    container.remove();\n                    const pel = el.children[0];\n                    pel.innerHTML = '';\n                    pel.setAttribute('style', style);\n                    const scene = new webgui.Scene();\n                    scene.init(pel, render_data);\n                    scene.render();\n                    adoptDatGuiStyles(el);\n                    setTimeout(() => adoptDatGuiStyles(el), 100);\n                });\n        });\n    }\n\n    async function render({ model, el }) {\n        const webgui = await loadWebgui();\n        const value = model.get(\"value\");\n        if (value && value.render_data !== undefined && value.preview !== undefined) {\n            renderDocu(webgui, model, el);\n        } else {\n            renderScene(webgui, model, el);\n        }\n    }\n    export default { render };\n    ", "_model_module": "anywidget", "_model_module_version": "~0.11.*", "_model_name": "AnyModel", "_view_count": null, "_view_module": "anywidget", "_view_module_version": "~0.11.*", "_view_name": "AnyView", "height": "20rem", "layout": "IPY_MODEL_539393f84a904f17acf8c74d392ba832", "tabbable": null, "tooltip": null, "value": {"gui_settings": {}, "ngsolve_version": "6.2.2605-32-g6274337fa", "mesh_dim": 2, "order2d": 2, "order3d": 2, "draw_vol": false, "draw_surf": true, "objects": [], "deformation": false, "funcdim": 1, "show_wireframe": true, "show_mesh": true, "Bezier_points": ["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"], "edges": ["zcxMPgAAAAAAAAAAAAAAAM3MzD4AAAAAAAAAAAAAAACamRk/AAAAAAAAAAAAAAAAzcxMPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/zcxMPgAAAAAAAAAAAACAP83MzD4AAAAAAAAAAAAAgD+amRk/AAAAAAAAAAAAAIA/zcxMPwAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAM3MTD8AAIA/AAAAAAAAAACamRk/AACAPwAAAAAAAAAAzczMPgAAgD8AAAAAAAAAAM3MTD4AAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAPG4ppM3MTD8AAAAAAAAAADxuqaSamRk/AAAAAAAAAABZJf6kzczMPgAAAAAAAAAAPG4ppc3MTD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=", "zczMPQAAAAAAAAAAAAAAAJqZmT4AAAAAAAAAAAAAAAAAAAA/AAAAAAAAAAAAAAAAMzMzPwAAAAAAAAAAAAAAAGZmZj8AAAAAAAAAAAAAAAAAAIA/zczMPQAAAAAAAAAAAACAP5qZmT4AAAAAAAAAAAAAgD8AAAA/AAAAAAAAAAAAAIA/MzMzPwAAAAAAAAAAAACAP2ZmZj8AAAAAAAAAAGZmZj8AAIA/AAAAAAAAAAAzMzM/AACAPwAAAAAAAAAAAAAAPwAAgD8AAAAAAAAAAJqZmT4AAIA/AAAAAAAAAADNzMw9AACAPwAAAAAAAAAAPG6po2ZmZj8AAAAAAAAAAFklfqQzMzM/AAAAAAAAAADKydOkAAAAPwAAAAAAAAAAdEAUpZqZmT4AAAAAAAAAADxuqaTNzMw9AAAAAAAAAAA=", "AAAAAAAAAAAAAAAAAAAAAM3MTD4AAAAAAAAAAAAAAADNzMw+AAAAAAAAAAAAAAAAmpkZPwAAAAAAAAAAAAAAAM3MTD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAP83MTD4AAAAAAAAAAAAAgD/NzMw+AAAAAAAAAAAAAIA/mpkZPwAAAAAAAAAAAACAP83MTD8AAAAAAAAAAAAAgD8AAIA/AAAAAAAAAADNzEw/AACAPwAAAAAAAAAAmpkZPwAAgD8AAAAAAAAAAM3MzD4AAIA/AAAAAAAAAADNzEw+AACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAADxuKaTNzEw/AAAAAAAAAAA8bqmkmpkZPwAAAAAAAAAAWSX+pM3MzD4AAAAAAAAAADxuKaXNzEw+AAAAAAAAAAA="], "Bezier_trig_points": ["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"], "mesh_center": [0.49999999999999994, 0.5000000000000001, 1.1125369292536007e-308], "mesh_radius": 0.7071067811865477, "funcmin": -0.0920381147486625, "funcmax": 0.24591122938211635, "multidim_interpolate": false, "multidim_animate": false, "deformation_scale": 1.0, "autoscale": true, "fullscreen": false}, "width": "100%"}}, "a543eb8b91ac487a9abc283998f7a6c3": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "96785849225848a295ac6bfdc4ae84d2": {"model_name": "AnyModel", "model_module": "anywidget", "model_module_version": "~0.11.*", "state": {"_anywidget_id": "netgen.webgui.WebGuiWidget", "_css": "\n    .webgui-widget {\n        padding: 0px 2px;\n    }\n    .webgui_container { position: relative; }\n    .webgui_container .image { width: 100%; display: block; }\n    .webgui_overlay {\n        position: absolute; top: 0; left: 0; width: 100%; height: 100%;\n        cursor: pointer;\n    }\n    .webgui_tooltip .webgui_tooltiptext {\n        visibility: hidden;\n        background-color: rgba(85, 85, 85, 0.9); color: #fff;\n        text-align: center; border-radius: 6px; padding: 5px 10px;\n        position: absolute; top: 50%; left: 50%;\n        transform: translate(-50%, -50%); white-space: nowrap;\n    }\n    .webgui_tooltip:hover .webgui_tooltiptext { visibility: visible; }\n\n    .label3d {\n      -moz-user-select: none;\n      -ms-user-select:none;\n      -o-user-select:none;\n      -webkit-user-select: none;\n      display:block;\n      position: absolute;\n      transform: translate(-50%, -50%);\n      user-select:none;\n      z-index: 1;\n    }\n\n    .tooltiptext {\n      width: 120px;\n      background-color: #555;\n      color: #fff;\n      text-align: center;\n      border-radius: 6px;\n      padding: 5px 0;\n      position: absolute;\n      z-index: 1;\n      left: 50%;\n      margin-left: -60px;\n      opacity: 1;\n      transition: opacity 0.3s;\n    }\n\n\n    ", "_dom_classes": [], "_esm": "\n    function loadWebgui() {\n        // webgui's dist is a Vite IIFE build that assigns a global `webgui`\n        // var; it has no module exports, so it must be loaded as a classic\n        // <script> and read off of window rather than import()-ed.\n        if (window.webgui) return Promise.resolve(window.webgui);\n        if (!window._webgui_loading) {\n            window._webgui_loading = new Promise((resolve, reject) => {\n                const s = document.createElement(\"script\");\n                s.src = \"https://cdn.jsdelivr.net/npm/webgui@0.2.39/dist/webgui.js\";\n                s.onload = () => resolve(window.webgui);\n                s.onerror = reject;\n                document.head.appendChild(s);\n            });\n        }\n        return window._webgui_loading;\n    }\n\n    // dat.gui (the control panel webgui adds, top-right) injects its stylesheet\n    // into the main document <head>. When this widget is hosted by MyST it lives\n    // inside a shadow root, and head styles do not cross the shadow boundary, so\n    // the panel renders unstyled. Copy the dat.gui stylesheet into our shadow\n    // root so it applies. No-op in a normal Jupyter page (no shadow root).\n    function adoptDatGuiStyles(el) {\n        const root = el.getRootNode();\n        if (typeof ShadowRoot === 'undefined' || !(root instanceof ShadowRoot)) return;\n        if (root.querySelector('style[data-webgui-datgui]')) return;\n        let copied = false;\n        for (const style of document.querySelectorAll('head style')) {\n            const css = style.textContent || '';\n            if (/\\.dg[\\s.,{>:]/.test(css)) {\n                const clone = document.createElement('style');\n                clone.setAttribute('data-webgui-datgui', '');\n                clone.textContent = css;\n                root.appendChild(clone);\n                copied = true;\n            }\n        }\n        return copied;\n    }\n\n    // The render data is normally the `value` trait itself. When `value` is a\n    // string it is instead a URL to a JSON file holding the data: the static\n    // MyST build offloads the (large) render data to a sidecar file next to the\n    // notebook to keep pages small (see scripts/widgets_to_directives.py). Fetch\n    // it in that case; otherwise use the value as-is.\n    function resolveRenderData(value) {\n        if (typeof value === 'string') {\n            return fetch(value).then((resp) => resp.json());\n        }\n        return Promise.resolve(value);\n    }\n\n    // Interactive scene view (port of WebguiView in the legacy widget.ts).\n    function renderScene(webgui, model, el) {\n        el.classList.add('webgui-widget');\n        // size the widget as requested from Python; the canvas container fills it\n\n        const scene = new webgui.Scene();\n        const container = document.createElement('div');\n        container.style.width = model.get(\"width\");\n        container.style.height = model.get(\"height\");\n        el.appendChild(container);\n\n        // defer to the next tick so the container is laid out before webgui\n        // measures it (otherwise offsetHeight is read as ~0 -> tiny canvas)\n        setTimeout(() => {\n            resolveRenderData(model.get(\"value\")).then((render_data) => {\n                container.style.width = model.get(\"width\");\n                container.style.height = model.get(\"height\");\n                if(Object.keys(render_data).length === 0)\n                    return;\n                scene.init(container, render_data);\n                scene.container.style.position = 'relative';\n                scene.render();\n                adoptDatGuiStyles(el);\n                // dat.gui may inject its <style> a tick after construction; retry once.\n                setTimeout(() => adoptDatGuiStyles(el), 100);\n            });\n        }, 0);\n\n        // redraw: Python sets widget.value -> push new data into the scene\n        model.on('change:value', () => {\n            resolveRenderData(model.get(\"value\")).then((render_data) => {\n                scene.updateRenderData(render_data);\n            });\n        });\n    }\n\n    // Documentation view (port of WebguiDocuView): show a preview image and\n    // only load the interactive scene + render data on click.\n    function renderDocu(webgui, model, el) {\n        const files = model.get(\"value\");\n        const container = document.createElement('div');\n        container.className = 'webgui_container';\n        container.style.width = '100%';\n        container.innerHTML = `\n            <img src=\"${files['preview']}\" class=\"image\">\n            <div class=\"webgui_overlay webgui_tooltip\">\n                <span class=\"webgui_tooltiptext\"> Click to load interactive WebGUI </span>\n            </div>`;\n        const div = document.createElement('div');\n        div.appendChild(container);\n        el.appendChild(div);\n\n        container.addEventListener('click', () => {\n            document.body.style.cursor = 'wait';\n            fetch(files['render_data'])\n                .then((resp) => resp.json())\n                .then((render_data) => {\n                    document.body.style.cursor = '';\n                    const style = `width: ${el.clientWidth}px; height: ${el.clientHeight}px;`;\n                    container.remove();\n                    const pel = el.children[0];\n                    pel.innerHTML = '';\n                    pel.setAttribute('style', style);\n                    const scene = new webgui.Scene();\n                    scene.init(pel, render_data);\n                    scene.render();\n                    adoptDatGuiStyles(el);\n                    setTimeout(() => adoptDatGuiStyles(el), 100);\n                });\n        });\n    }\n\n    async function render({ model, el }) {\n        const webgui = await loadWebgui();\n        const value = model.get(\"value\");\n        if (value && value.render_data !== undefined && value.preview !== undefined) {\n            renderDocu(webgui, model, el);\n        } else {\n            renderScene(webgui, model, el);\n        }\n    }\n    export default { render };\n    ", "_model_module": "anywidget", "_model_module_version": "~0.11.*", "_model_name": "AnyModel", "_view_count": null, "_view_module": "anywidget", "_view_module_version": "~0.11.*", "_view_name": "AnyView", "height": "20rem", "layout": "IPY_MODEL_a543eb8b91ac487a9abc283998f7a6c3", "tabbable": null, "tooltip": null, "value": {"gui_settings": {}, "ngsolve_version": "6.2.2605-32-g6274337fa", "mesh_dim": 2, "order2d": 2, "order3d": 2, "draw_vol": false, "draw_surf": true, "objects": [], "deformation": false, "funcdim": 1, "show_wireframe": true, "show_mesh": true, "Bezier_points": ["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"], "edges": ["zcxMPgAAAAAAAAAAAAAAAM3MzD4AAAAAAAAAAAAAAACamRk/AAAAAAAAAAAAAAAAzcxMPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/zcxMPgAAAAAAAAAAAACAP83MzD4AAAAAAAAAAAAAgD+amRk/AAAAAAAAAAAAAIA/zcxMPwAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAM3MTD8AAIA/AAAAAAAAAACamRk/AACAPwAAAAAAAAAAzczMPgAAgD8AAAAAAAAAAM3MTD4AAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAPG4ppM3MTD8AAAAAAAAAADxuqaSamRk/AAAAAAAAAABZJf6kzczMPgAAAAAAAAAAPG4ppc3MTD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=", "zczMPQAAAAAAAAAAAAAAAJqZmT4AAAAAAAAAAAAAAAAAAAA/AAAAAAAAAAAAAAAAMzMzPwAAAAAAAAAAAAAAAGZmZj8AAAAAAAAAAAAAAAAAAIA/zczMPQAAAAAAAAAAAACAP5qZmT4AAAAAAAAAAAAAgD8AAAA/AAAAAAAAAAAAAIA/MzMzPwAAAAAAAAAAAACAP2ZmZj8AAAAAAAAAAGZmZj8AAIA/AAAAAAAAAAAzMzM/AACAPwAAAAAAAAAAAAAAPwAAgD8AAAAAAAAAAJqZmT4AAIA/AAAAAAAAAADNzMw9AACAPwAAAAAAAAAAPG6po2ZmZj8AAAAAAAAAAFklfqQzMzM/AAAAAAAAAADKydOkAAAAPwAAAAAAAAAAdEAUpZqZmT4AAAAAAAAAADxuqaTNzMw9AAAAAAAAAAA=", "AAAAAAAAAAAAAAAAAAAAAM3MTD4AAAAAAAAAAAAAAADNzMw+AAAAAAAAAAAAAAAAmpkZPwAAAAAAAAAAAAAAAM3MTD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAP83MTD4AAAAAAAAAAAAAgD/NzMw+AAAAAAAAAAAAAIA/mpkZPwAAAAAAAAAAAACAP83MTD8AAAAAAAAAAAAAgD8AAIA/AAAAAAAAAADNzEw/AACAPwAAAAAAAAAAmpkZPwAAgD8AAAAAAAAAAM3MzD4AAIA/AAAAAAAAAADNzEw+AACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAADxuKaTNzEw/AAAAAAAAAAA8bqmkmpkZPwAAAAAAAAAAWSX+pM3MzD4AAAAAAAAAADxuKaXNzEw+AAAAAAAAAAA="], "Bezier_trig_points": ["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"], "mesh_center": [0.49999999999999994, 0.5000000000000001, 1.1125369292536007e-308], "mesh_radius": 0.7071067811865477, "funcmin": -0.03917966874499762, "funcmax": 0.0017297089778646503, "multidim_interpolate": false, "multidim_animate": false, "deformation_scale": 1.0, "autoscale": true, "fullscreen": false}, "width": "100%"}}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Hybridization';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="1. Is NGSolve getting Lazy?" href="Lazy.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">UM26 talk</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    talk-UM26
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lazy.html">1. Is NGSolve getting Lazy?</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Hybridization</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jschoeberl.github.io/iFEM/plates_shells/HCT.html">HCT-element</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/JSchoeberl/talk-UM26/blob/main/notebooks/Hybridization.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/JSchoeberl/talk-UM26" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/Hybridization.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Hybridization</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-equation">3.1. Poisson equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstruct-the-flux">3.2. Reconstruct the flux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postprocessing-for-the-scalar">3.3. Postprocessing for the scalar</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="hybridization">
+<h1><span class="section-number">3. </span>Hybridization<a class="headerlink" href="#hybridization" title="Permalink to this heading">#</a></h1>
+<section id="poisson-equation">
+<h2><span class="section-number">3.1. </span>Poisson equation<a class="headerlink" href="#poisson-equation" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ngsolve</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ngsolve.webgui</span><span class="w"> </span><span class="kn">import</span> <span class="n">Draw</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">Mesh</span><span class="p">(</span><span class="n">unit_square</span><span class="o">.</span><span class="n">GenerateMesh</span><span class="p">(</span><span class="n">maxh</span><span class="o">=</span><span class="mf">0.2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">order</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">Sigma</span> <span class="o">=</span> <span class="n">HDiv</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">)</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">L2</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Vhat</span> <span class="o">=</span> <span class="n">FacetFESpace</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">dirichlet</span><span class="o">=</span><span class="s2">&quot;.*&quot;</span><span class="p">)</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">PrivateSpace</span><span class="p">(</span><span class="n">Sigma</span><span class="p">)</span> <span class="o">*</span> <span class="n">V</span> <span class="o">*</span> <span class="n">Vhat</span>
+<span class="p">(</span><span class="n">sigma</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">uhat</span><span class="p">),</span> <span class="p">(</span><span class="n">tau</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">vhat</span><span class="p">)</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">TnT</span><span class="p">()</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;ndof.Sigma=&quot;</span><span class="p">,</span> <span class="n">Sigma</span><span class="o">.</span><span class="n">ndof</span><span class="p">,</span> <span class="s2">&quot;V.ndof=&quot;</span><span class="p">,</span> <span class="n">V</span><span class="o">.</span><span class="n">ndof</span><span class="p">,</span> <span class="s2">&quot;Vhat.ndof=&quot;</span><span class="p">,</span> <span class="n">Vhat</span><span class="o">.</span><span class="n">ndof</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;X.ndof = &quot;</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">ndof</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ndof.Sigma= 182 V.ndof= 54 Vhat.ndof= 182
+X.ndof =  236
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">specialcf</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">Div</span><span class="p">(</span><span class="n">sigma</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">vhat</span><span class="p">):</span> <span class="k">return</span> <span class="n">div</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="o">*</span><span class="n">dx</span> <span class="o">-</span> <span class="n">sigma</span><span class="o">*</span><span class="n">n</span> <span class="o">*</span> <span class="n">vhat</span><span class="o">*</span><span class="n">dx</span><span class="p">(</span><span class="n">element_boundary</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">source</span> <span class="o">=</span> <span class="n">x</span>
+
+<span class="n">lhs</span> <span class="o">=</span> <span class="n">sigma</span><span class="o">*</span><span class="n">tau</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">Div</span><span class="p">(</span><span class="n">sigma</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">vhat</span><span class="p">)</span> <span class="o">+</span> <span class="n">Div</span><span class="p">(</span><span class="n">tau</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span><span class="n">uhat</span><span class="p">)</span>
+<span class="n">rhs</span> <span class="o">=</span> <span class="n">source</span><span class="o">*</span><span class="n">v</span><span class="o">*</span><span class="n">dx</span>
+<span class="n">gf</span> <span class="o">=</span> <span class="n">Solve</span><span class="p">(</span><span class="n">lhs</span><span class="o">==</span><span class="n">rhs</span><span class="p">)</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">gfu</span><span class="p">,</span> <span class="n">gfuhat</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">components</span>
+<span class="n">Draw</span> <span class="p">(</span><span class="n">gfu</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 1, "model_id": "51346a24552344a6b07bdc6140a2970a"}</script></div>
+</div>
+</section>
+<section id="reconstruct-the-flux">
+<h2><span class="section-number">3.2. </span>Reconstruct the flux<a class="headerlink" href="#reconstruct-the-flux" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Xp1</span> <span class="o">=</span> <span class="n">Discontinuous</span><span class="p">(</span><span class="n">Sigma</span><span class="p">)</span><span class="o">*</span><span class="n">V</span>
+<span class="p">(</span><span class="n">sigmap1</span><span class="p">,</span> <span class="n">up1</span><span class="p">),</span> <span class="p">(</span><span class="n">taup1</span><span class="p">,</span> <span class="n">vp1</span><span class="p">)</span> <span class="o">=</span> <span class="n">Xp1</span><span class="o">.</span><span class="n">TnT</span><span class="p">()</span>
+
+<span class="n">lhs</span> <span class="o">=</span> <span class="n">sigmap1</span><span class="o">*</span><span class="n">taup1</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">div</span><span class="p">(</span><span class="n">sigmap1</span><span class="p">)</span><span class="o">*</span><span class="n">vp1</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">div</span><span class="p">(</span><span class="n">taup1</span><span class="p">)</span><span class="o">*</span><span class="n">up1</span><span class="o">*</span><span class="n">dx</span>
+<span class="n">rhs</span> <span class="o">=</span> <span class="n">source</span><span class="o">*</span><span class="n">vp1</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">taup1</span><span class="o">*</span><span class="n">n</span> <span class="o">*</span> <span class="n">gfuhat</span><span class="o">*</span><span class="n">dx</span><span class="p">(</span><span class="n">element_boundary</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">gfpsigma</span><span class="p">,</span><span class="n">_</span> <span class="o">=</span> <span class="n">Solve</span><span class="p">(</span><span class="n">lhs</span><span class="o">==</span><span class="n">rhs</span><span class="p">)</span><span class="o">.</span><span class="n">components</span>
+
+<span class="n">Draw</span> <span class="p">(</span><span class="n">gfpsigma</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">mesh</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 1, "model_id": "4434c513af294d8ead86d10ea916afff"}</script></div>
+</div>
+</section>
+<section id="postprocessing-for-the-scalar">
+<h2><span class="section-number">3.3. </span>Postprocessing for the scalar<a class="headerlink" href="#postprocessing-for-the-scalar" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Xp</span> <span class="o">=</span> <span class="n">L2</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">L2</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">(</span><span class="n">up</span><span class="p">,</span><span class="n">umean</span><span class="p">),(</span><span class="n">vp</span><span class="p">,</span><span class="n">vmean</span><span class="p">)</span> <span class="o">=</span> <span class="n">Xp</span><span class="o">.</span><span class="n">TnT</span><span class="p">()</span>
+
+<span class="n">lhs</span> <span class="o">=</span> <span class="n">grad</span><span class="p">(</span><span class="n">up</span><span class="p">)</span><span class="o">*</span><span class="n">grad</span><span class="p">(</span><span class="n">vp</span><span class="p">)</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">up</span><span class="o">*</span><span class="n">vmean</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">vp</span><span class="o">*</span><span class="n">umean</span><span class="o">*</span><span class="n">dx</span>
+<span class="n">rhs</span> <span class="o">=</span> <span class="n">gfpsigma</span><span class="o">*</span><span class="n">grad</span><span class="p">(</span><span class="n">vp</span><span class="p">)</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">gfu</span><span class="o">*</span><span class="n">vmean</span><span class="o">*</span><span class="n">dx</span>
+<span class="n">gfp</span><span class="p">,</span><span class="n">_</span> <span class="o">=</span> <span class="n">Solve</span><span class="p">(</span><span class="n">lhs</span><span class="o">==</span><span class="n">rhs</span><span class="p">)</span><span class="o">.</span><span class="n">components</span>
+<span class="n">Draw</span> <span class="p">(</span><span class="n">gfp</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 1, "model_id": "96785849225848a295ac6bfdc4ae84d2"}</script></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Lazy.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Is NGSolve getting Lazy?</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-equation">3.1. Poisson equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstruct-the-flux">3.2. Reconstruct the flux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postprocessing-for-the-scalar">3.3. Postprocessing for the scalar</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. Schöberl
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
