@@ -1,4 +1,4 @@
-NGSolve User-meeting 26, Winterthur
+# NGSolve User-meeting 26, Winterthur
 
 Joachim Schöberl
 
