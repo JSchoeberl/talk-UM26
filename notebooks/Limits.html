@@ -1,0 +1,640 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>4. Pushing the limits &#8212; UM26 talk</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Limits';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Contact" href="Contact.html" />
+    <link rel="prev" title="3. Schäfer-Turek Flow benchmark" href="SchaeferTurek.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">UM26 talk</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lazy.html">1. Is NGSolve getting Lazy?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Hybridization.html">2. Hybridization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SchaeferTurek.html">3. Schäfer-Turek Flow benchmark</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Pushing the limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Contact.html">5. Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Learning.html">6. Learning NGSolve</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://jschoeberl.github.io/iFEM/plates_shells/HCT.html">HCT-element</a></li>
+<li class="toctree-l1"><a class="reference internal" href="JKMelasticity.html">7. JKM - TDNNS</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/JSchoeberl/talk-UM26/blob/main/notebooks/Limits.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/JSchoeberl/talk-UM26" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/Limits.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pushing the limits</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-evaluation">4.1. Recursive evaluation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-possible-solution-compile">4.2. A possible solution: Compile</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">4.3. Implementation:</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pushing-the-limits">
+<h1><span class="section-number">4. </span>Pushing the limits<a class="headerlink" href="#pushing-the-limits" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ngsolve</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">Mesh</span><span class="p">(</span><span class="n">unit_square</span><span class="o">.</span><span class="n">GenerateMesh</span><span class="p">(</span><span class="n">maxh</span><span class="o">=</span><span class="mf">0.2</span><span class="p">))</span>
+
+<span class="c1"># SetHeapSize(1000*1000*1000)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">func</span> <span class="o">=</span> <span class="n">x</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">func</span> <span class="o">+=</span> <span class="n">x</span>
+
+<span class="c1"># with TaskManager():</span>
+<span class="n">Integrate</span> <span class="p">(</span><span class="n">func</span><span class="o">*</span><span class="n">dx</span><span class="p">(</span><span class="n">bonus_intorder</span><span class="o">=</span><span class="mi">50</span><span class="p">),</span> <span class="n">mesh</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.49999999997998
+</pre></div>
+</div>
+</div>
+</div>
+<section id="recursive-evaluation">
+<h2><span class="section-number">4.1. </span>Recursive evaluation<a class="headerlink" href="#recursive-evaluation" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Recursive evaluation requires a stack.</p></li>
+<li><p>Stack-size is (seriously) bounded, depending on the system, and parallelization</p></li>
+<li><p>Stack-overflow cannot be detected within C++</p></li>
+</ul>
+</section>
+<section id="a-possible-solution-compile">
+<h2><span class="section-number">4.2. </span>A possible solution: Compile<a class="headerlink" href="#a-possible-solution-compile" title="Permalink to this heading">#</a></h2>
+<p>A way out of recursive evaluation is to linearize the expression tree, this happens by the <code class="docutils literal notranslate"><span class="pre">.Compile</span></code> function.</p>
+<p>We do not <code class="docutils literal notranslate"><span class="pre">.Compile</span></code> per default</p>
+<ul class="simple">
+<li><p>since it does not work for some cases (mixed real/complex expressions) or</p></li>
+<li><p>may slow down in other situations (heavy <code class="docutils literal notranslate"><span class="pre">Region</span></code>-wise coefficients).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">func</span> <span class="o">=</span> <span class="n">x</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span> <span class="n">func</span> <span class="o">+=</span> <span class="n">x</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Integral =&quot;</span><span class="p">,</span> <span class="n">Integrate</span> <span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">Compile</span><span class="p">()</span><span class="o">*</span><span class="n">dx</span><span class="p">(</span><span class="n">bonus_intorder</span><span class="o">=</span><span class="mi">50</span><span class="p">),</span> <span class="n">mesh</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Integral = 500.49999999980145
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="implementation">
+<h2><span class="section-number">4.3. </span>Implementation:<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h2>
+<p>We use containers with optimized allocation to avoid dynamic memory allocation on the global heap.</p>
+<p><strong>Version 1:</strong> put array onto the stack. Use a macro for non-standard C++ definition of local variable-length arrays:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">MIR</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="n">ORDERING</span><span class="w"> </span><span class="n">ORD</span><span class="o">&gt;</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">ExpressionPlus</span><span class="o">::</span><span class="n">T_Evaluate</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MIR</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ir</span><span class="p">,</span><span class="w"> </span><span class="n">BareSliceMatrix</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="n">ORD</span><span class="o">&gt;</span><span class="w"> </span><span class="n">values</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="n">np</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ir</span><span class="p">.</span><span class="n">Size</span><span class="p">();</span><span class="w"> </span>
+<span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="n">dim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dimension</span><span class="p">();</span>
+
+<span class="w">  </span><span class="n">STACK_ARRAY</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">hmem</span><span class="p">,</span><span class="w"> </span><span class="n">np</span><span class="o">*</span><span class="n">dim</span><span class="p">);</span>
+<span class="w">  </span><span class="n">FlatMatrix</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="n">ORD</span><span class="o">&gt;</span><span class="w"> </span><span class="n">temp</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span><span class="w"> </span><span class="n">np</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">hmem</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="w">    </span>
+<span class="w">  </span><span class="n">c1</span><span class="o">-&gt;</span><span class="n">Evaluate</span><span class="w"> </span><span class="p">(</span><span class="n">ir</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="p">);</span>
+<span class="w">  </span><span class="n">c2</span><span class="o">-&gt;</span><span class="n">Evaluate</span><span class="w"> </span><span class="p">(</span><span class="n">ir</span><span class="p">,</span><span class="w"> </span><span class="n">temp</span><span class="p">);</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mydim</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">np</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<span class="w">      </span><span class="n">values</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">values</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="o">+</span><span class="n">temp</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Version 2:</strong> Preserve a fixed size of memory, ans use dynamic allocation for larger needs:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">MIR</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="n">ORDERING</span><span class="w"> </span><span class="n">ORD</span><span class="o">&gt;</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">ExpressionPlus</span><span class="o">::</span><span class="n">T_Evaluate</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MIR</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ir</span><span class="p">,</span><span class="w"> </span><span class="n">BareSliceMatrix</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="n">ORD</span><span class="o">&gt;</span><span class="w"> </span><span class="n">values</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="n">np</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ir</span><span class="p">.</span><span class="n">Size</span><span class="p">();</span><span class="w"> </span>
+<span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="n">dim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dimension</span><span class="p">();</span>
+
+<span class="w">  </span><span class="n">ArrayMem</span><span class="o">&lt;</span><span class="mi">100</span><span class="p">,</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">hmem</span><span class="p">(</span><span class="n">np</span><span class="o">*</span><span class="n">dim</span><span class="p">);</span>
+<span class="w">  </span><span class="n">FlatMatrix</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="n">ORD</span><span class="o">&gt;</span><span class="w"> </span><span class="n">temp</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span><span class="w"> </span><span class="n">np</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">hmem</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="w">    </span>
+<span class="w">  </span><span class="n">c1</span><span class="o">-&gt;</span><span class="n">Evaluate</span><span class="w"> </span><span class="p">(</span><span class="n">ir</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="p">);</span>
+<span class="w">  </span><span class="n">c2</span><span class="o">-&gt;</span><span class="n">Evaluate</span><span class="w"> </span><span class="p">(</span><span class="n">ir</span><span class="p">,</span><span class="w"> </span><span class="n">temp</span><span class="p">);</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mydim</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">np</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<span class="w">      </span><span class="n">values</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">values</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="o">+</span><span class="n">temp</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>New since NGSolve 2606:</strong></p>
+<ul class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">LocalHeap</span></code> preallocates a big chunk of memory, and behaves like a stack. However size is user-defined, and over-flow can be detected by C++ code. Used for a long time within NGSolve. For many functions it is propagated by function arguments, but by far not for all.</p></li>
+<li><p>Using one global variable does not work with multi-threading</p></li>
+<li><p>Now, we introduced a <code class="docutils literal notranslate"><span class="pre">thread_local</span> <span class="pre">LocalHeap</span></code>, which is a global variable for each thread (thx Matthias for the</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">MIR</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="n">ORDERING</span><span class="w"> </span><span class="n">ORD</span><span class="o">&gt;</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">ExpressionPlus</span><span class="o">::</span><span class="n">T_Evaluate</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MIR</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ir</span><span class="p">,</span><span class="w"> </span><span class="n">BareSliceMatrix</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="n">ORD</span><span class="o">&gt;</span><span class="w"> </span><span class="n">values</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="n">np</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ir</span><span class="p">.</span><span class="n">Size</span><span class="p">();</span><span class="w"> </span>
+<span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="n">dim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dimension</span><span class="p">();</span>
+
+<span class="w">  </span><span class="n">LocalHeap</span><span class="w"> </span><span class="o">&amp;</span><span class="n">lh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TLHeap</span><span class="p">();</span>
+<span class="w">  </span><span class="n">HeapReset</span><span class="w"> </span><span class="nf">hr</span><span class="p">(</span><span class="n">lh</span><span class="p">);</span>
+<span class="w">  </span><span class="n">FlatMatrix</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="n">ORD</span><span class="o">&gt;</span><span class="w"> </span><span class="n">temp</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span><span class="w"> </span><span class="n">np</span><span class="p">,</span><span class="w"> </span><span class="n">lh</span><span class="p">);</span>
+<span class="w">    </span>
+<span class="w">  </span><span class="n">c1</span><span class="o">-&gt;</span><span class="n">Evaluate</span><span class="w"> </span><span class="p">(</span><span class="n">ir</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="p">);</span>
+<span class="w">  </span><span class="n">c2</span><span class="o">-&gt;</span><span class="n">Evaluate</span><span class="w"> </span><span class="p">(</span><span class="n">ir</span><span class="p">,</span><span class="w"> </span><span class="n">temp</span><span class="p">);</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">dim</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">np</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<span class="w">      </span><span class="n">values</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">values</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="o">+</span><span class="n">temp</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now, no big data is kept on the system-stack. Matrix entries are kept on the self-made <code class="docutils literal notranslate"><span class="pre">LocalHeap</span></code> stack. There are still limits, since control-structures are kept on the system stack.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="SchaeferTurek.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Schäfer-Turek Flow benchmark</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Contact.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Contact</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-evaluation">4.1. Recursive evaluation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-possible-solution-compile">4.2. A possible solution: Compile</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">4.3. Implementation:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. Schöberl
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
