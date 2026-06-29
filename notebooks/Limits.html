@@ -432,7 +432,7 @@ document.write(`
 <p>We do not <code class="docutils literal notranslate"><span class="pre">.Compile</span></code> per default</p>
 <ul class="simple">
 <li><p>since it does not work for some cases (mixed real/complex expressions) or</p></li>
-<li><p>may slow down in other situations (heavy <code class="docutils literal notranslate"><span class="pre">Region</span></code>-wise coefficients).</p></li>
+<li><p>may even slow down in other situations (heavy <code class="docutils literal notranslate"><span class="pre">Region</span></code>-wise coefficients).</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -470,7 +470,7 @@ document.write(`
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><strong>Version 2:</strong> Preserve a fixed size of memory, ans use dynamic allocation for larger needs:</p>
+<p><strong>Version 2:</strong> Preserve a fixed size of memory, and use dynamic allocation for larger needs:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">MIR</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="n">ORDERING</span><span class="w"> </span><span class="n">ORD</span><span class="o">&gt;</span>
 <span class="kt">void</span><span class="w"> </span><span class="n">ExpressionPlus</span><span class="o">::</span><span class="n">T_Evaluate</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MIR</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ir</span><span class="p">,</span><span class="w"> </span><span class="n">BareSliceMatrix</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="n">ORD</span><span class="o">&gt;</span><span class="w"> </span><span class="n">values</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span>
 <span class="p">{</span>
@@ -492,7 +492,7 @@ document.write(`
 <ul class="simple">
 <li><p>A <code class="docutils literal notranslate"><span class="pre">LocalHeap</span></code> preallocates a big chunk of memory, and behaves like a stack. However size is user-defined, and over-flow can be detected by C++ code. Used for a long time within NGSolve. For many functions it is propagated by function arguments, but by far not for all.</p></li>
 <li><p>Using one global variable does not work with multi-threading</p></li>
-<li><p>Now, we introduced a <code class="docutils literal notranslate"><span class="pre">thread_local</span> <span class="pre">LocalHeap</span></code>, which is a global variable for each thread (thx Matthias for the</p></li>
+<li><p>Now, we introduced a <code class="docutils literal notranslate"><span class="pre">thread_local</span> <span class="pre">LocalHeap</span></code>, which is a global variable for each thread (thx Matthias).</p></li>
 </ul>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">MIR</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="n">ORDERING</span><span class="w"> </span><span class="n">ORD</span><span class="o">&gt;</span>
 <span class="kt">void</span><span class="w"> </span><span class="n">ExpressionPlus</span><span class="o">::</span><span class="n">T_Evaluate</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MIR</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ir</span><span class="p">,</span><span class="w"> </span><span class="n">BareSliceMatrix</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="n">ORD</span><span class="o">&gt;</span><span class="w"> </span><span class="n">values</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span>
@@ -512,7 +512,7 @@ document.write(`
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Now, no big data is kept on the system-stack. Matrix entries are kept on the self-made <code class="docutils literal notranslate"><span class="pre">LocalHeap</span></code> stack. There are still limits, since control-structures are kept on the system stack.</p>
+<p>Now, no big data is kept on the system-stack. Matrix entries are kept on the home-made <code class="docutils literal notranslate"><span class="pre">LocalHeap</span></code> stack. There are still limits, since control structures are kept on the system stack.</p>
 </section>
 </section>
 
